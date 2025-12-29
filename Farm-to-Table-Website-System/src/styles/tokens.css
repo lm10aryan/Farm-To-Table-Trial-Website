@@ -1,0 +1,46 @@
+:root {
+  --bg: #f4efe5;
+  --surface: #fbf8f2;
+  --surface-alt: #f1eadf;
+  --text: #1a140f;
+  --muted: #5a5145;
+  --border: #d3c4b3;
+  --accent: #a4481b;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.9rem;
+  --radius-lg: 1.5rem;
+
+  --shadow-sm: 0 1px 2px rgba(18, 18, 18, 0.08);
+  --shadow-md: 0 18px 30px rgba(15, 12, 8, 0.14);
+
+  --font-family-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-display: clamp(2.75rem, 5vw, 3.75rem);
+  --font-size-h1: clamp(2.25rem, 4vw, 3rem);
+  --font-size-h2: clamp(1.75rem, 3vw, 2.375rem);
+  --font-size-h3: clamp(1.375rem, 2vw, 1.75rem);
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+  --font-size-label: 0.75rem;
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.35;
+  --line-height-relaxed: 1.6;
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-wide: 0.3em;
+
+  --section-padding-mobile: 3.5rem;
+  --section-padding-desktop: 5rem;
+  --section-padding-compact-mobile: 2rem;
+  --section-padding-compact-desktop: 3rem;
+
+  --grid-size-lg: 140px;
+  --grid-size-md: 90px;
+  --hero-gradient: radial-gradient(circle at 15% 15%, rgba(164, 80, 28, 0.35), transparent 55%), radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.35), transparent 50%);
+  --hero-grid: linear-gradient(0deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px);
+  --system-grid: linear-gradient(0deg, rgba(95, 84, 70, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(95, 84, 70, 0.1) 1px, transparent 1px);
+  --grain-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
+  --glow-color: rgba(164, 80, 28, 0.35);
+  --authority-bg: #e2d8c7;
+  --authority-border: rgba(58, 46, 33, 0.25);
+  --authority-grid: linear-gradient(0deg, rgba(60, 48, 36, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 48, 36, 0.08) 1px, transparent 1px);
+}
