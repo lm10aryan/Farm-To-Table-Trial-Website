@@ -1,37 +1,28 @@
 "use client"
 
 import { forwardRef, HTMLAttributes } from 'react'
-import { motion, MotionProps } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 type CardProps = {
   interactive?: boolean
-} & HTMLAttributes<HTMLDivElement> &
-  MotionProps
+} & HTMLAttributes<HTMLDivElement>
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(function Card(
   { className, children, interactive = false, ...rest },
   ref
 ) {
-  const { whileHover: customWhileHover, whileTap: customWhileTap, ...motionRest } = rest
   return (
-    <motion.div
+    <div
       ref={ref}
       className={cn(
-        'rounded-[1.5rem] border border-border/70 bg-surface shadow-sm transition-all duration-200',
-        interactive && 'cursor-pointer',
+        'rounded-lg transition-all duration-300',
+        interactive && 'cursor-pointer hover:-translate-y-1 hover:shadow-xl',
         className
       )}
-      whileHover={
-        interactive
-          ? { y: -6, boxShadow: '0 22px 36px rgba(24, 18, 12, 0.15)' }
-          : customWhileHover
-      }
-      whileTap={interactive ? { y: -2 } : customWhileTap}
-      {...motionRest}
+      {...rest}
     >
       {children}
-    </motion.div>
+    </div>
   )
 })
 

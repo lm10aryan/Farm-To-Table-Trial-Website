@@ -3,7 +3,6 @@ import { Container } from '@/components/layout/Container'
 import { buildMetadata } from '@/components/seo/SEO'
 import { Card } from '@/components/ui/Card'
 import { AssuranceLine } from '@/components/ui/AssuranceLine'
-import { fadeInUp } from '@/components/ui/motionVariants'
 
 export const metadata = buildMetadata({
   title: 'System',
@@ -30,8 +29,8 @@ export default function SystemPage() {
           <p>Lot files: agronomy, packing, dispatch only.</p>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
-          {systemPillars.map((pillar, index) => (
-            <Card key={pillar} interactive className="p-5" {...fadeInUp(index * 0.1)}>
+          {systemPillars.map((pillar) => (
+            <Card key={pillar} interactive className="p-5">
               <p className="text-sm font-semibold text-text">{pillar}</p>
             </Card>
           ))}

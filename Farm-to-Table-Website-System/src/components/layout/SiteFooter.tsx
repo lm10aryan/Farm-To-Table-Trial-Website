@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { Container } from './Container'
-import { CONTACT_EMAIL, REGIONS_SERVED, WHATSAPP_NUMBER } from '@/lib/constants'
-import { ComplianceBadges } from '@/components/ui/ComplianceBadges'
+import { CONTACT_EMAIL, WHATSAPP_NUMBER } from '@/lib/constants'
 import { Divider } from '@/components/ui/Divider'
 
 const navLinks = [
@@ -13,27 +12,13 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
 ]
 
-const assuranceBadges = ['Food Safety Program', 'Residue Monitoring', 'Traceability', 'Cold Chain SOP']
-
 export function SiteFooter() {
   return (
     <footer className="mt-20 border-t border-border/70 bg-surface/80">
       <Container className="grid gap-8 py-12 md:grid-cols-[1.25fr_1fr_1fr]">
         <div className="space-y-4">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Farm to Table</p>
-          <p className="text-lg font-semibold text-text">Process-first export desk out of Nasik.</p>
-          <p className="text-sm text-muted">
-            Field data, residue readings, and cold-chain telemetry are logged before vessels depart so buyers
-            receive evidence-backed cartons.
-          </p>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-muted">Compliance approach</p>
-            <p className="mt-1 text-sm text-text">
-              Independent field checks, residue monitoring, and cold-chain SOPs with documentation ready for audits.
-            </p>
-            <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-muted">Assurance lanes</p>
-            <ComplianceBadges badges={assuranceBadges} className="mt-2" />
-          </div>
+          <p className="text-lg font-semibold text-text">We focus on doing the basics right — and staying close to the work.</p>
         </div>
 
         <div>
@@ -60,8 +45,8 @@ export function SiteFooter() {
             WhatsApp: {WHATSAPP_NUMBER}
           </Link>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-muted">Regions served</p>
-            <p className="text-sm text-text">{REGIONS_SERVED.join(' · ')}</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted">Regional focus</p>
+            <p className="text-sm text-text">[TBD]</p>
           </div>
         </div>
       </Container>

@@ -130,4 +130,20 @@
     opacity: 0.18;
     background-image: var(--grain-texture);
   }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Scroll Padding for Fixed Nav */
+  html {
+    scroll-padding-top: 80px;
+  }
+
+  /* Better Focus Styles */
+  *:focus-visible {
+    outline: 2px solid var(--color-olive);
+    outline-offset: 2px;
+  }
 }
