@@ -7,8 +7,7 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Products', href: '/products' },
   { label: 'System', href: '/system' },
-  { label: 'Quality', href: '/quality' },
-  { label: 'About', href: '/about' },
+  { label: 'Partnership', href: '/partnership' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -46,7 +45,7 @@ export function SiteFooter() {
           </Link>
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-muted">Regional focus</p>
-            <p className="text-sm text-text">[TBD]</p>
+            <p className="text-sm text-text">Middle East, Europe & Southeast Asia</p>
           </div>
         </div>
       </Container>

@@ -1,644 +1,279 @@
 'use client'
 
-import { Section } from '@/components/layout/Section'
-import { Container } from '@/components/layout/Container'
-import { Button } from '@/components/ui/Button'
-import { Card } from '@/components/ui/Card'
-import { HeroSection } from '@/components/home/HeroSection'
-import { SystemProofPoints } from '@/components/home/SystemProofPoints'
-import { ProcurementJourney } from '@/components/home/ProcurementJourney'
+import { useState } from 'react'
+
+import { ProductCard } from '@/components/products/ProductCard'
+import { TDSDrawer } from '@/components/products/TDSDrawer'
+import { getAllCatalogProducts, type ProductSpec, type SeasonMonth } from '@/data/catalogProducts'
 
 export default function HomePage() {
+  const products = getAllCatalogProducts()
+  const [selectedProduct, setSelectedProduct] = useState<ProductSpec | null>(null)
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+
+  const handleCardClick = (product: ProductSpec) => {
+    setSelectedProduct(product)
+    setIsDrawerOpen(true)
+  }
+
+  const handleDrawerClose = () => setIsDrawerOpen(false)
+
+  const currentMonth = new Date().toLocaleString('en-US', { month: 'short' }) as SeasonMonth
+  const inSeasonProducts = products.filter((product) => product.primarySeason.months.includes(currentMonth))
+  const displayProducts = inSeasonProducts.length > 0 ? inSeasonProducts : products
+
   return (
     <>
-      {/* SECTION 1: HERO - New redesigned hero section */}
-      <HeroSection />
-
-      {/* SECTION 2: SYSTEM PROOF POINTS - 6 Strategic Cards */}
-      <SystemProofPoints />
-
-      {/* SECTION 3: PROCUREMENT JOURNEY */}
-      <ProcurementJourney />
-
-      {/* SECTION 4: PROOF */}
-      <Section variant="surface">
-        <Container>
-          <div className="space-y-12">
-            <div className="text-center space-y-4 max-w-2xl mx-auto">
-              <p className="text-sm uppercase tracking-wide text-muted">
-                Evidence-First
-              </p>
-              <h2 className="text-[var(--font-size-h1)] font-bold">
-                Proof, not promises
-              </h2>
-            </div>
-
-            <div className="grid gap-12 md:grid-cols-2">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold">
-                  Export-ready packing
-                </h3>
-                <p className="text-muted">
-                  Packing formats are defined upfront. Mixed or inconsistent lots are rejected.
-                </p>
-
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted/10 border-2 border-dashed border-muted/30">
-                  <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
-                    <p className="text-xs uppercase tracking-wide text-muted/60">
-                      Real Photo: Packed Cartons / Inner Packing Close-Up
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold">
-                  Quality checks that matter
-                </h3>
-                <ul className="space-y-3 text-muted">
-                  <li>• Grade uniformity verified</li>
-                  <li>• Defects screened</li>
-                  <li>• Pack integrity checked</li>
-                </ul>
-
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted/10 border-2 border-dashed border-muted/30">
-                  <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
-                    <p className="text-xs uppercase tracking-wide text-muted/60">
-                      Real Photo: QC Checklist in Hand
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* SECTION 5: PRODUCTS */}
-      <Section>
-        <Container>
-          <div className="space-y-12">
-            <div className="space-y-4 max-w-3xl">
-              <p className="text-sm uppercase tracking-wide text-muted">
-                Programs
-              </p>
-              <h2 className="text-[var(--font-size-h1)] font-bold">
-                What's Available Now
-              </h2>
-              <p
-                className="text-center font-medium mb-3"
-                style={{
-                  color: 'var(--color-olive)',
-                  fontSize: '1rem',
-                }}
-              >
-                Peak season products for {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-              </p>
-              <p className="text-lg text-muted">
-                Quality varies by season—we don't hide that. Here's what's at peak quality right now:
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {/* Pomegranates */}
-              <div className="bg-[var(--color-light-gray)] p-5 rounded-lg hover:scale-105 transition-transform duration-300">
-                <div className="aspect-[4/3] bg-white rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-sm text-[var(--color-medium-gray)]">
-                    [Product Photo]
-                  </span>
-                </div>
-
-                <h3
-                  className="font-semibold mb-2"
-                  style={{
-                    fontSize: '1.25rem',
-                    color: 'var(--color-dark-text)',
-                  }}
-                >
-                  Pomegranates
-                </h3>
-
-                <div
-                  className="inline-block px-3 py-1 rounded-full mb-3"
-                  style={{
-                    backgroundColor: 'var(--color-success)',
-                    color: 'white',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                  }}
-                >
-                  Peak Quality
-                </div>
-
-                <ul className="space-y-1.5 mb-4 text-left">
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • 14-16° Brix (peak season)
-                  </li>
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Week 48-14 availability
-                  </li>
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Red Lady & Nutrigo
-                  </li>
-                </ul>
-
-                <a
-                  href="/products#pomegranates"
-                  className="inline-flex items-center font-semibold hover:underline"
-                  style={{
-                    color: 'var(--color-olive)',
-                    fontSize: '1rem',
-                  }}
-                >
-                  View Specs →
-                </a>
-              </div>
-
-              {/* Grapes */}
-              <div className="bg-[var(--color-light-gray)] p-5 rounded-lg hover:scale-105 transition-transform duration-300">
-                <div className="aspect-[4/3] bg-white rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-sm text-[var(--color-medium-gray)]">
-                    [Product Photo]
-                  </span>
-                </div>
-
-                <h3
-                  className="font-semibold mb-2"
-                  style={{
-                    fontSize: '1.25rem',
-                    color: 'var(--color-dark-text)',
-                  }}
-                >
-                  Grapes
-                </h3>
-
-                <div
-                  className="inline-block px-3 py-1 rounded-full mb-3"
-                  style={{
-                    backgroundColor: 'var(--color-success)',
-                    color: 'white',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                  }}
-                >
-                  Peak Quality
-                </div>
-
-                <ul className="space-y-1.5 mb-4 text-left">
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • 18mm+ bunches
-                  </li>
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • &lt;2% defects
-                  </li>
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Week 48-14
-                  </li>
-                </ul>
-
-                <a
-                  href="/products#grapes"
-                  className="inline-flex items-center font-semibold hover:underline"
-                  style={{
-                    color: 'var(--color-olive)',
-                    fontSize: '1rem',
-                  }}
-                >
-                  View Specs →
-                </a>
-              </div>
-
-              {/* Melons */}
-              <div className="bg-[var(--color-light-gray)] p-5 rounded-lg hover:scale-105 transition-transform duration-300">
-                <div className="aspect-[4/3] bg-white rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-sm text-[var(--color-medium-gray)]">
-                    [Product Photo]
-                  </span>
-                </div>
-
-                <h3
-                  className="font-semibold mb-2"
-                  style={{
-                    fontSize: '1.25rem',
-                    color: 'var(--color-dark-text)',
-                  }}
-                >
-                  Melons
-                </h3>
-
-                <div
-                  className="inline-block px-3 py-1 rounded-full mb-3"
-                  style={{
-                    backgroundColor: 'var(--color-success)',
-                    color: 'white',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                  }}
-                >
-                  Peak Quality
-                </div>
-
-                <ul className="space-y-1.5 mb-4 text-left">
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Brix tested
-                  </li>
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Moisture controlled
-                  </li>
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Summer season
-                  </li>
-                </ul>
-
-                <a
-                  href="/products#melons"
-                  className="inline-flex items-center font-semibold hover:underline"
-                  style={{
-                    color: 'var(--color-olive)',
-                    fontSize: '1rem',
-                  }}
-                >
-                  View Specs →
-                </a>
-              </div>
-
-              {/* Bananas */}
-              <div className="bg-[var(--color-light-gray)] p-5 rounded-lg hover:scale-105 transition-transform duration-300">
-                <div className="aspect-[4/3] bg-white rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-sm text-[var(--color-medium-gray)]">
-                    [Product Photo]
-                  </span>
-                </div>
-
-                <h3
-                  className="font-semibold mb-2"
-                  style={{
-                    fontSize: '1.25rem',
-                    color: 'var(--color-dark-text)',
-                  }}
-                >
-                  Bananas
-                </h3>
-
-                <div
-                  className="inline-block px-3 py-1 rounded-full mb-3"
-                  style={{
-                    backgroundColor: 'var(--color-success)',
-                    color: 'white',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                  }}
-                >
-                  Peak Quality
-                </div>
-
-                <ul className="space-y-1.5 mb-4 text-left">
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Year-round supply
-                  </li>
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Cavendish variety
-                  </li>
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Green to yellow stages
-                  </li>
-                </ul>
-
-                <a
-                  href="/products#bananas"
-                  className="inline-flex items-center font-semibold hover:underline"
-                  style={{
-                    color: 'var(--color-olive)',
-                    fontSize: '1rem',
-                  }}
-                >
-                  View Specs →
-                </a>
-              </div>
-
-              {/* Coconuts */}
-              <div className="bg-[var(--color-light-gray)] p-5 rounded-lg hover:scale-105 transition-transform duration-300">
-                <div className="aspect-[4/3] bg-white rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-sm text-[var(--color-medium-gray)]">
-                    [Product Photo]
-                  </span>
-                </div>
-
-                <h3
-                  className="font-semibold mb-2"
-                  style={{
-                    fontSize: '1.25rem',
-                    color: 'var(--color-dark-text)',
-                  }}
-                >
-                  Coconuts
-                </h3>
-
-                <div
-                  className="inline-block px-3 py-1 rounded-full mb-3"
-                  style={{
-                    backgroundColor: 'var(--color-success)',
-                    color: 'white',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                  }}
-                >
-                  Peak Quality
-                </div>
-
-                <ul className="space-y-1.5 mb-4 text-left">
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Fresh, not dried
-                  </li>
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Full traceability
-                  </li>
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Direct from farms
-                  </li>
-                </ul>
-
-                <a
-                  href="/products#coconuts"
-                  className="inline-flex items-center font-semibold hover:underline"
-                  style={{
-                    color: 'var(--color-olive)',
-                    fontSize: '1rem',
-                  }}
-                >
-                  View Specs →
-                </a>
-              </div>
-
-              {/* Red Onions */}
-              <div className="bg-[var(--color-light-gray)] p-5 rounded-lg hover:scale-105 transition-transform duration-300">
-                <div className="aspect-[4/3] bg-white rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-sm text-[var(--color-medium-gray)]">
-                    [Product Photo]
-                  </span>
-                </div>
-
-                <h3
-                  className="font-semibold mb-2"
-                  style={{
-                    fontSize: '1.25rem',
-                    color: 'var(--color-dark-text)',
-                  }}
-                >
-                  Red Onions
-                </h3>
-
-                <div
-                  className="inline-block px-3 py-1 rounded-full mb-3"
-                  style={{
-                    backgroundColor: 'var(--color-success)',
-                    color: 'white',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                  }}
-                >
-                  Peak Quality
-                </div>
-
-                <ul className="space-y-1.5 mb-4 text-left">
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Export grade
-                  </li>
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Low moisture
-                  </li>
-                  <li
-                    className="text-sm"
-                    style={{ color: 'var(--color-medium-gray)' }}
-                  >
-                    • Long shelf life
-                  </li>
-                </ul>
-
-                <a
-                  href="/products#red-onions"
-                  className="inline-flex items-center font-semibold hover:underline"
-                  style={{
-                    color: 'var(--color-olive)',
-                    fontSize: '1rem',
-                  }}
-                >
-                  View Specs →
-                </a>
-              </div>
-            </div>
-
-            {/* Bottom CTA */}
-            <div className="text-center mt-12">
-              <p
-                className="mb-6 max-w-2xl mx-auto"
-                style={{
-                  color: 'var(--color-medium-gray)',
-                  fontSize: '1rem',
-                  lineHeight: '1.8',
-                }}
-              >
-                We track seasonal variations in Brix levels, size calibers, and quality metrics.
-                This depth of knowledge means you can plan programs with confidence—not hope.
-              </p>
-              <a
-                href="/products"
-                className="inline-flex items-center font-semibold text-lg hover:underline"
-                style={{ color: 'var(--color-olive)' }}
-              >
-                See Full Seasonal Calendar & Product Range →
-              </a>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* SECTION 6: BRANDS */}
-      <Section variant="surface">
-        <Container className="max-w-5xl">
-          <div className="space-y-12">
-            <div className="text-center space-y-4 max-w-3xl mx-auto">
-              <p className="text-sm uppercase tracking-wide text-muted">
-                System Output
-              </p>
-              <h2 className="text-[var(--font-size-h1)] font-bold">
-                Two Brands, One Standard
-              </h2>
-              <p className="text-lg text-muted">
-                We operate two brands for different market segments—both built on the same quality discipline and grading systems.
-              </p>
-            </div>
-
-            <div className="grid gap-8 md:grid-cols-2">
-              <Card className="bg-[var(--color-light-gray)] p-8 rounded-2xl text-center space-y-4">
-                <div className="space-y-2">
-                  <h3 className="text-3xl font-bold text-[var(--color-dark-text)]">RED LADY</h3>
-                  <p className="text-lg font-medium text-[var(--color-olive)]">Premium Retail</p>
-                </div>
-                <p className="text-muted leading-relaxed">
-                  For premium retailers who demand the highest standards. Every piece hand-graded, Brix-tested, lot-traced.
-                </p>
-                <p className="text-muted leading-relaxed">
-                  We&apos;ve refused shipments of Red Lady produce rather than compromise—that&apos;s why the brand has earned trust with premium buyers across Middle East, Europe, and Southeast Asia.
-                </p>
-                <div className="pt-4">
-                  <Button href="/products" variant="ghost" size="md">
-                    View Red Lady Products →
-                  </Button>
-                </div>
-              </Card>
-
-              <Card className="bg-[var(--color-light-gray)] p-8 rounded-2xl text-center space-y-4">
-                <div className="space-y-2">
-                  <h3 className="text-3xl font-bold text-[var(--color-dark-text)]">NUTRIGO</h3>
-                  <p className="text-lg font-medium text-[var(--color-olive)]">Volume-Quality Wholesale</p>
-                </div>
-                <p className="text-muted leading-relaxed">
-                  For wholesalers seeking reliable quality at scale. Consistent grading, transparent specs, dependable supply.
-                </p>
-                <p className="text-muted leading-relaxed">
-                  Built for program planning with buyers who understand that &apos;volume-quality&apos; doesn&apos;t mean compromising standards—it means scaling them.
-                </p>
-                <div className="pt-4">
-                  <Button href="/products" variant="ghost" size="md">
-                    View Nutrigo Products →
-                  </Button>
-                </div>
-              </Card>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* SECTION 7: CTA */}
-      <Section variant="default" className="py-20">
-        <Container>
-
-          <div
-            className="max-w-3xl mx-auto text-center p-12 rounded-2xl"
-            style={{
-              background: 'linear-gradient(135deg, var(--color-light-gray) 0%, var(--color-off-white) 100%)',
-            }}
-          >
-
-            {/* Heading */}
-            <h2
-              className="font-bold mb-6"
-              style={{
-                fontSize: 'clamp(2rem, 3vw, 2.5rem)',
-                color: 'var(--color-dark-text)',
-                lineHeight: '1.3',
-              }}
-            >
-              Built for Strategic Partnerships,
+      <div className="min-h-screen bg-base-black text-type-primary">
+        <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+          <div className="section-container z-10 space-y-8 text-center">
+            <h1 className="text-display-xl text-type-primary">
+              Premium Indian Produce.
               <br />
-              Not Transactional Volume
-            </h2>
-
-            {/* Body Paragraphs */}
-            <div className="space-y-5 mb-8">
-              <p
-                style={{
-                  fontSize: '1.125rem',
-                  color: 'var(--color-dark-text)',
-                  lineHeight: '1.8',
-                }}
+              Engineered for Consistency.
+            </h1>
+            <p className="mb-4 mx-auto max-w-4xl text-body-lg text-type-secondary">
+              We handle the chaos of Indian sourcing so you get reliable quality, season after season.
+            </p>
+            <p className="mx-auto max-w-4xl text-body-md text-type-tertiary">
+              Two brands. Six products. Zero compromise.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <button
+                type="button"
+                className="btn-primary"
+                onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                We don&apos;t work with hundreds of buyers. We work with premium retailers
-                and wholesalers who value consistency, plan programs 3-6 months ahead,
-                and understand that quality has a cost.
-              </p>
+                View Products
+              </button>
+              <button type="button" className="btn-secondary">
+                Download Product Specs
+              </button>
+            </div>
+          </div>
+          <div className="gradient-overlay" />
+        </section>
 
-              <p
-                style={{
-                  fontSize: '1.125rem',
-                  color: 'var(--color-dark-text)',
-                  lineHeight: '1.8',
-                }}
-              >
-                Every partnership starts with trial containers—2-3 shipments to ensure
-                quality meets your standards and our systems align with your needs.
-                Then we plan together for the long term.
-              </p>
+        <section className="py-16">
+          <div className="section-container">
+            <div className="mx-auto max-w-4xl space-y-8">
+              <div className="space-y-4 text-center">
+                <h2 className="text-display-md text-type-primary">Why Indian Exports Are Difficult</h2>
+                <p className="text-body-lg text-type-secondary">
+                  India grows world-class produce. Getting it consistently to international markets is chaos.
+                </p>
+              </div>
+              <div className="card-base p-8 md:p-12">
+                <h3 className="mb-6 text-body-xl font-semibold text-type-primary">The Reality of Indian Sourcing:</h3>
+                <ul className="space-y-4 text-body-md text-type-secondary">
+                  {[
+                    'Thousands of small, fragmented farms across regions',
+                    'Quality varies by location, by week, even by farm',
+                    'Tropical climate creates unpredictable seasonal swings',
+                    'Internal defects invisible to the eye until destination',
+                    'Most exporters lack scientific grading equipment',
+                    'Commission-based models incentivize volume, not quality',
+                  ].map((point) => (
+                    <li key={point} className="flex items-start gap-3">
+                      <span className="mt-1 flex-shrink-0 text-olive-400">•</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-8 border-t border-type-tertiary pt-6 text-body-lg text-type-primary">
+                  Result: Surprise rejections at port. Inconsistent specs. Communication breakdowns. Lost trust. Buyers doing damage control instead of running
+                  their business.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-              <p
-                style={{
-                  fontSize: '1.125rem',
-                  color: 'var(--color-dark-text)',
-                  lineHeight: '1.8',
-                }}
-              >
-                We&apos;re not for everyone. If you&apos;re optimizing purely for lowest price,
-                there are cheaper suppliers. But if you&apos;re looking for a partner you can
-                build programs with—let&apos;s start a conversation.
+        <section className="bg-base-off-black py-16">
+          <div className="section-container">
+            <div className="mx-auto max-w-6xl space-y-12">
+              <div className="space-y-4 text-center">
+                <h2 className="text-display-md text-type-primary">Our System: Built to Handle Complexity</h2>
+                <p className="mx-auto max-w-3xl text-body-lg text-type-secondary">
+                  We&apos;ve spent years building deep expertise in India&apos;s agricultural landscape. Same team. Scientific protocols. Direct farm relationships.
+                </p>
+              </div>
+              <div className="grid gap-8 md:grid-cols-3">
+                {[
+                  {
+                    icon: '🗺️',
+                    title: 'Knowledge-Driven Sourcing',
+                    bullets: [
+                      'Partner with growers across multiple regions',
+                      'Years of relationship capital, not transactional spot buying',
+                      'Track seasonal patterns, quality shifts week-by-week',
+                      'Know which farms produce what quality, when',
+                    ],
+                  },
+                  {
+                    icon: '🔬',
+                    title: 'Scientific Quality Control',
+                    bullets: [
+                      'Brix testing, internal sampling, pressure testing',
+                      'Skilled team—same people for years, not seasonal contractors',
+                      '30% rejection rate at source, not at your port',
+                      'Three-layer inspection before container loading',
+                    ],
+                  },
+                  {
+                    icon: '🤝',
+                    title: 'Everyone Wins',
+                    bullets: [
+                      'Farmers: Stable pricing above market rates',
+                      'Workers: Year-round employment, fair wages',
+                      'Team: Invested in quality, not volume quotas',
+                      'Buyers: Consistent specs, transparent process',
+                    ],
+                  },
+                ].map((card) => (
+                  <div key={card.title} className="card-base space-y-4 p-8">
+                    <div className="text-5xl">{card.icon}</div>
+                    <h3 className="text-body-xl font-semibold text-type-primary">{card.title}</h3>
+                    <ul className="space-y-3 text-body-sm text-type-secondary">
+                      {card.bullets.map((bullet) => (
+                        <li key={bullet} className="flex items-start gap-2">
+                          <span className="mt-1 flex-shrink-0 text-olive-400">•</span>
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <p className="mx-auto max-w-3xl text-center text-body-lg text-type-secondary">
+                You have fixed schedules and enough stress already. We handle the chaos so you can focus on your business.
               </p>
             </div>
-
-            {/* CTA Button */}
-            <Button
-              href="/contact"
-              variant="primary"
-              size="lg"
-              className="shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 px-10 py-4 text-xl font-semibold rounded-lg"
-            >
-              Request Partnership Discussion →
-            </Button>
-
           </div>
+        </section>
 
-        </Container>
-      </Section>
+        <section id="products" className="py-24">
+          <div className="section-container space-y-12">
+            <div className="space-y-3 text-center">
+              <h2 className="text-display-lg text-type-primary">Current Harvest Window</h2>
+              <p className="text-body-lg text-type-secondary">
+                {inSeasonProducts.length > 0
+                  ? `${inSeasonProducts.length} products at peak quality this month`
+                  : 'Year-round availability across our product range'}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {displayProducts.map((product) => (
+                <ProductCard key={product.id} product={product} onClick={handleCardClick} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-base-off-black py-24">
+          <div className="section-container">
+            <div className="mx-auto max-w-4xl space-y-12 text-center">
+              <div className="space-y-4">
+                <h2 className="text-display-md text-type-primary">Two Brands, One System</h2>
+                <p className="text-body-lg text-type-secondary">Different market segments. Same quality standards.</p>
+              </div>
+              <div className="grid gap-8 md:grid-cols-2">
+                <div className="card-base overflow-hidden">
+                  <div className="flex h-48 items-center justify-center bg-gradient-to-br from-accent-gold/20 to-accent-gold/5 text-6xl">
+                    🍎
+                  </div>
+                  <div className="space-y-6 p-8 text-left">
+                    <div className="inline-flex items-center gap-3 rounded-full border border-accent-gold/30 bg-accent-gold/10 px-4 py-2 text-body-lg font-semibold text-accent-gold">
+                      Red Lady
+                    </div>
+                    <h3 className="text-body-xl font-semibold text-type-primary">Boutique Retail Standards</h3>
+                    <p className="text-body-md text-type-secondary">
+                      For premium retailers who demand the highest standards. Every piece hand-graded, Brix-tested, lot-traced.
+                    </p>
+                    <p className="text-body-sm italic text-type-secondary">
+                      We&apos;ve refused shipments rather than compromise. That&apos;s why the brand has earned trust with premium buyers across Middle East,
+                      Europe, and Southeast Asia.
+                    </p>
+                    <div className="border-t border-type-tertiary pt-4 text-body-sm text-type-tertiary">Featured: Pomegranates, Grapes</div>
+                  </div>
+                </div>
+                <div className="card-base overflow-hidden">
+                  <div className="flex h-48 items-center justify-center bg-gradient-to-br from-accent-steel/20 to-accent-steel/5 text-6xl">
+                    🛒
+                  </div>
+                  <div className="space-y-6 p-8 text-left">
+                    <div className="inline-flex items-center gap-3 rounded-full border border-accent-steel/30 bg-accent-steel/10 px-4 py-2 text-body-lg font-semibold text-accent-steel">
+                      Nutrigo
+                    </div>
+                    <h3 className="text-body-xl font-semibold text-type-primary">Program-Scale Reliability</h3>
+                    <p className="text-body-md text-type-secondary">
+                      For wholesalers seeking reliable quality at scale. Consistent grading, transparent specs, dependable supply.
+                    </p>
+                    <p className="text-body-sm italic text-type-secondary">
+                      Built for program planning with buyers who understand that &quot;volume-quality&quot; means scaling standards, not compromising them.
+                    </p>
+                    <div className="border-t border-type-tertiary pt-4 text-body-sm text-type-tertiary">
+                      Featured: Bananas, Red Onions, Coconuts, Melons (+ shared products)
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="relative overflow-hidden py-32">
+          <div className="absolute inset-0">
+            <div className="animate-glow-pulse absolute inset-0 mx-auto my-auto h-96 w-96 rounded-full bg-olive-500/10 blur-3xl" />
+          </div>
+          <div className="section-container relative z-10">
+            <div className="mx-auto grid max-w-5xl gap-16 md:grid-cols-2 md:items-center">
+              <div className="text-center md:text-left">
+                <div className="text-[10rem] font-bold leading-none text-olive-500 text-glow-olive md:text-[14rem]">30%</div>
+                <div className="font-mono text-data-lg text-type-secondary">REJECTION RATE</div>
+              </div>
+              <div className="space-y-6">
+                <h3 className="text-display-md text-type-primary">We Reject 30% at the Gate</h3>
+                <p className="text-body-lg text-type-secondary">
+                  On average, we reject more than 30% of the best-quality produce during grading—so you don&apos;t reject it at your port.
+                </p>
+                <div className="space-y-3 border-t border-type-tertiary pt-4">
+                  {[
+                    'Visual inspection + internal sampling at farm gate',
+                    'Brix testing and firmness validation at packing house',
+                    'Final quality check before container loading',
+                  ].map((step, idx) => (
+                    <div key={step} className="flex items-start gap-3">
+                      <div className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-olive-600 bg-olive-900/50 text-xs text-olive-400">
+                        {idx + 1}
+                      </div>
+                      <p className="text-body-sm text-type-secondary">{step}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="mx-auto max-w-3xl text-center text-body-lg text-type-secondary pt-8 md:mx-0 md:text-left">
+                  This is why we cost more than spot-market exporters. And why buyers come back season after season.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-base-off-black py-24">
+          <div className="section-container">
+            <div className="mx-auto max-w-3xl space-y-8 text-center">
+              <h2 className="text-display-lg text-type-primary">Ready to establish a partnership?</h2>
+              <p className="text-body-lg text-type-secondary">We work with 10-15 committed buyers. Not transactional ordering.</p>
+              <button type="button" className="btn-primary px-8 py-4 text-lg">
+                Request Product Allocation
+              </button>
+              <p className="text-body-sm text-type-tertiary">Partnership inquiries typically receive response within 48 hours</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <TDSDrawer product={selectedProduct} isOpen={isDrawerOpen} onClose={handleDrawerClose} />
     </>
   )
 }
