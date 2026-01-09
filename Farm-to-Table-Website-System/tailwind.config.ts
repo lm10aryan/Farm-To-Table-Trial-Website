@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   darkMode: ['class'],
@@ -18,22 +18,22 @@ const config: Config = {
     },
     extend: {
       colors: {
-        base: {
-          black: '#0A0A0B',
-          'off-black': '#121214',
-          charcoal: '#1A1A1C',
-        },
         olive: {
-          50: '#F5F6F3',
-          100: '#E8EBE3',
-          200: '#D1D6C7',
+          50: '#f7f8f4',
+          100: '#e8ebdd',
+          200: '#d4d9c3',
           300: '#B4BCA3',
-          400: '#95A080',
-          500: '#6B7A52',
-          600: '#556241',
+          400: '#a8b574',
+          500: '#8B945F',
+          600: '#6b7447',
           700: '#404A32',
           800: '#2D3524',
-          900: '#1C2116',
+          900: '#2d3120',
+        },
+        base: {
+          black: '#0A0A0B',
+          'off-black': '#141414',
+          charcoal: '#1A1A1C',
         },
         status: {
           success: '#4ADE80',
@@ -62,20 +62,35 @@ const config: Config = {
         accentLegacy: 'var(--accent)',
       },
       fontFamily: {
+        display: ['"Space Grotesk"', 'sans-serif'],
+        body: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-jetbrains-mono)', 'Consolas', 'monospace'],
       },
       fontSize: {
+        // Display sizes
         'display-xl': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
-        'display-lg': ['3.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
-        'display-md': ['2.5rem', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
-        'body-xl': ['1.25rem', { lineHeight: '1.6', fontWeight: '400' }],
-        'body-lg': ['1.125rem', { lineHeight: '1.6', fontWeight: '400' }],
+        'display-lg': ['3.5rem', { lineHeight: '1.15', letterSpacing: '-0.01em', fontWeight: '700' }],
+        'display-md': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
+        'display-sm': ['2.25rem', { lineHeight: '1.3', fontWeight: '600' }],
+
+        // Body sizes
+        'body-xl': ['1.25rem', { lineHeight: '1.7', fontWeight: '400' }],
+        'body-lg': ['1.125rem', { lineHeight: '1.7', fontWeight: '400' }],
         'body-md': ['1rem', { lineHeight: '1.6', fontWeight: '400' }],
-        'body-sm': ['0.875rem', { lineHeight: '1.5', fontWeight: '400' }],
-        'data-lg': ['1rem', { lineHeight: '1.4', fontWeight: '500' }],
-        'data-md': ['0.875rem', { lineHeight: '1.4', fontWeight: '500' }],
-        'data-sm': ['0.75rem', { lineHeight: '1.4', fontWeight: '500' }],
+        'body-sm': ['0.875rem', { lineHeight: '1.6', fontWeight: '400' }],
+
+        // Data sizes
+        'data-lg': ['1rem', { lineHeight: '1.5', letterSpacing: '0.05em', fontWeight: '500' }],
+        'data-md': ['0.875rem', { lineHeight: '1.5', letterSpacing: '0.05em', fontWeight: '500' }],
+        'data-sm': ['0.75rem', { lineHeight: '1.5', letterSpacing: '0.05em', fontWeight: '500' }],
+      },
+      spacing: {
+        'section': '10rem', // 160px
+        'container-gap': '7.5rem', // 120px
+        'stack-lg': '4rem', // 64px
+        'stack-md': '2rem', // 32px
+        'stack-sm': '1rem', // 16px
       },
       boxShadow: {
         'olive-glow': '0 0 20px rgba(107, 122, 82, 0.3)',

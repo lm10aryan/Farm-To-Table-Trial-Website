@@ -17,25 +17,25 @@ export default function WorkWithUsPage() {
               <br />
               So You Don&apos;t Have To
             </h1>
-            <p className="text-body-xl text-type-secondary">
+            <p className="text-body-xl text-type-secondary max-w-[65ch] mx-auto">
               Building reliable sourcing partnerships for premium Indian produce
             </p>
-            <p className="mx-auto max-w-3xl text-body-lg text-type-secondary">
+            <p className="mx-auto max-w-[65ch] text-body-lg text-type-secondary">
               10-15 committed buyers. Seasonal planning. Transparent timelines. No spot orders, no surprises.
             </p>
           </div>
         </section>
 
-        <section className="bg-base-off-black py-16">
+        <section className="bg-base-off-black py-20">
           <div className="section-container">
             <div className="mx-auto max-w-5xl space-y-12">
               <div className="space-y-4 text-center">
-                <h2 className="text-display-md">How We&apos;re Different</h2>
-                <p className="text-body-lg text-type-secondary">Most Indian exporters operate on commission. We built a different model.</p>
+                <h2 className="text-display-md mb-6">How We&apos;re Different</h2>
+                <p className="text-body-lg text-type-secondary max-w-[65ch] mx-auto">Most Indian exporters operate on commission. We built a different model.</p>
               </div>
               <div className="card-base overflow-hidden">
                 <div className="grid md:grid-cols-2">
-                  <div className="space-y-6 border-type-tertiary p-8 md:border-r">
+                  <div className="space-y-6 border-type-tertiary p-8 lg:p-10 md:border-r">
                     <h3 className="border-type-tertiary border-b pb-4 text-center text-body-xl font-semibold">Typical Exporters</h3>
                     <ul className="space-y-4 text-body-md text-type-secondary">
                       {[
@@ -52,7 +52,7 @@ export default function WorkWithUsPage() {
                       ))}
                     </ul>
                   </div>
-                  <div className="space-y-6 bg-olive-900/10 p-8">
+                  <div className="space-y-6 bg-olive-900/10 p-8 lg:p-10">
                     <h3 className="border-b border-olive-600/30 pb-4 text-center text-body-xl font-semibold">Farm to Table</h3>
                     <ul className="space-y-4 text-body-md text-type-secondary">
                       {[
@@ -75,14 +75,14 @@ export default function WorkWithUsPage() {
           </div>
         </section>
 
-        <section className="py-16">
+        <section className="py-20">
           <div className="section-container">
             <div className="mx-auto max-w-4xl space-y-12">
               <div className="space-y-3 text-center">
-                <h2 className="text-display-md">How It Works</h2>
-                <p className="text-body-lg text-type-secondary">Simple partnership process focused on what buyers care about</p>
+                <h2 className="text-display-md mb-6">How It Works</h2>
+                <p className="text-body-lg text-type-secondary max-w-[65ch] mx-auto">Simple partnership process focused on what buyers care about</p>
               </div>
-              <div className="space-y-8">
+              <div className="space-y-10">
                 {[
                   {
                     title: 'Trial Container',
@@ -100,14 +100,14 @@ export default function WorkWithUsPage() {
                       'Weekly quality updates during harvest season. Transparent communication about availability. Consistent execution year after year. Most partnerships naturally continue because the model works—buyers get reliability, farmers get stability, we build trust.',
                   },
                 ].map((step, index) => (
-                  <div key={step.title} className="card-base p-8">
+                  <div key={step.title} className="card-base p-8 lg:p-10">
                     <div className="flex items-start gap-6">
                       <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-olive-600 bg-olive-900/50">
                         <span className="font-mono text-data-lg text-olive-400 font-bold">{index + 1}</span>
                       </div>
                       <div className="space-y-3">
                         <h3 className="text-body-xl font-semibold">{step.title}</h3>
-                        <p className="text-body-md text-type-secondary">{step.copy}</p>
+                        <p className="text-body-md text-type-secondary max-w-[65ch]">{step.copy}</p>
                       </div>
                     </div>
                   </div>
@@ -117,12 +117,12 @@ export default function WorkWithUsPage() {
           </div>
         </section>
 
-        <section className="bg-base-off-black py-16">
+        <section className="bg-base-off-black py-20">
           <div className="section-container">
             <div className="mx-auto max-w-5xl space-y-12">
               <div className="space-y-3 text-center">
-                <h2 className="text-display-md">Behind the Scenes: How We Source</h2>
-                <p className="text-body-lg text-type-secondary">Our procurement team handles the complexity so your supply chain stays simple</p>
+                <h2 className="text-display-md mb-6">Behind the Scenes: How We Source</h2>
+                <p className="text-body-lg text-type-secondary max-w-[65ch] mx-auto">Our procurement team handles the complexity so your supply chain stays simple</p>
               </div>
               <div className="grid gap-8 md:grid-cols-3">
                 {[
@@ -156,10 +156,10 @@ export default function WorkWithUsPage() {
                     ],
                   },
                 ].map((card) => (
-                  <div key={card.title} className="card-base space-y-4 p-8">
+                  <div key={card.title} className="card-base space-y-4 p-8 lg:p-10">
                     <div className="text-5xl">{card.icon}</div>
                     <h3 className="text-body-xl font-semibold">{card.title}</h3>
-                    <ul className="space-y-3 text-body-sm text-type-secondary">
+                    <ul className="space-y-4 text-body-sm text-type-secondary">
                       {card.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-2">
                           <span className="mt-1 flex-shrink-0 text-olive-400">•</span>
@@ -170,8 +170,8 @@ export default function WorkWithUsPage() {
                   </div>
                 ))}
               </div>
-              <div className="card-base p-8">
-                <p className="text-center text-body-lg text-type-primary">
+              <div className="card-base p-8 lg:p-10">
+                <p className="text-center text-body-lg text-type-primary max-w-[65ch] mx-auto">
                   This is standard in Indian exports. What&apos;s different: Our team has done this for years. Same people, not seasonal contractors. We know
                   the farms, we know the seasons, we catch problems early.
                 </p>
@@ -180,12 +180,12 @@ export default function WorkWithUsPage() {
           </div>
         </section>
 
-        <section className="py-16">
+        <section className="py-20">
           <div className="section-container">
             <div className="mx-auto max-w-5xl space-y-12">
               <div className="space-y-3 text-center">
-                <h2 className="text-display-md">Who We Serve Best</h2>
-                <p className="text-body-lg text-type-secondary">Our partnership model works particularly well for these buyer types</p>
+                <h2 className="text-display-md mb-6">Who We Serve Best</h2>
+                <p className="text-body-lg text-type-secondary max-w-[65ch] mx-auto">Our partnership model works particularly well for these buyer types</p>
               </div>
               <div className="grid gap-6 md:grid-cols-2">
                 {[
@@ -210,10 +210,10 @@ export default function WorkWithUsPage() {
                     copy: 'Food manufacturers who need specific Brix ranges, caliber consistency, and reliable supply for production planning.',
                   },
                 ].map((card) => (
-                  <div key={card.title} className="card-base space-y-4 p-8">
+                  <div key={card.title} className="card-base space-y-4 p-8 lg:p-10">
                     <div className="text-5xl">{card.icon}</div>
                     <h3 className="text-body-xl font-semibold">{card.title}</h3>
-                    <p className="text-body-md text-type-secondary">{card.copy}</p>
+                    <p className="text-body-md text-type-secondary max-w-[65ch]">{card.copy}</p>
                   </div>
                 ))}
               </div>
@@ -221,15 +221,15 @@ export default function WorkWithUsPage() {
           </div>
         </section>
 
-        <section className="bg-base-off-black py-16">
+        <section className="bg-base-off-black py-20">
           <div className="section-container">
             <div className="mx-auto max-w-4xl space-y-8">
               <div className="space-y-3 text-center">
-                <h2 className="text-display-md">Start a Conversation</h2>
-                <p className="text-body-lg text-type-secondary">Share your sourcing requirements and we&apos;ll respond within 48 hours</p>
+                <h2 className="text-display-md mb-6">Start a Conversation</h2>
+                <p className="text-body-lg text-type-secondary max-w-[65ch] mx-auto">Share your sourcing requirements and we&apos;ll respond within 48 hours</p>
               </div>
               <div className="grid gap-8 md:grid-cols-2">
-                <div className="card-base space-y-4 p-8">
+                <div className="card-base space-y-4 p-8 lg:p-10">
                   <h3 className="text-body-xl font-semibold">Request Partnership Discussion</h3>
                   <p className="text-body-md text-type-secondary">
                     Fill out our form with your requirements and we&apos;ll get back to you within 24-48 hours.
@@ -238,9 +238,9 @@ export default function WorkWithUsPage() {
                     Open Request Form
                   </button>
                 </div>
-                <div className="card-base space-y-4 p-8">
+                <div className="card-base space-y-4 p-8 lg:p-10">
                   <h3 className="text-body-xl font-semibold">Prefer Email?</h3>
-                  <p className="text-body-md text-type-secondary">Reach out directly and we&apos;ll schedule a discovery call.</p>
+                  <p className="text-body-md text-type-secondary max-w-[65ch]">Reach out directly and we&apos;ll schedule a discovery call.</p>
                   <a href="mailto:partnerships@farmtotabletrading.com" className="btn-secondary inline-block w-full text-center">
                     partnerships@farmtotabletrading.com
                   </a>

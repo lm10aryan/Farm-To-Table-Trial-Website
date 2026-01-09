@@ -2,6 +2,7 @@
 
 import { Section } from '@/components/layout/Section'
 import { Container } from '@/components/layout/Container'
+import { SectionHeader } from '@/components/layout/SectionHeader'
 import { Card } from '@/components/ui/Card'
 
 const proofPoints = [
@@ -66,30 +67,14 @@ export function SystemProofPoints() {
     <Section variant="surface" className="py-20">
       <Container>
 
-        {/* Section Header */}
-        <div className="text-center max-w-[800px] mx-auto mb-16">
-          <h2
-            className="font-bold mb-4"
-            style={{
-              fontSize: 'clamp(2rem, 3vw, 3rem)',
-              color: 'var(--color-dark-text)',
-              lineHeight: '1.2',
-            }}
-          >
-            The Challenges Are Real. Our Systems Are Proven.
-          </h2>
-          <p
-            className="text-lg"
-            style={{
-              color: 'var(--color-medium-gray)',
-              lineHeight: '1.8',
-            }}
-          >
-            Every buyer knows the frustrations: quality varies batch to batch,
-            harvest delays happen without communication, "premium" doesn't always
-            mean premium. Here's how we address them:
-          </p>
-        </div>
+        <SectionHeader
+          align="center"
+          title="The Challenges Are Real. Our Systems Are Proven."
+          description='Every buyer knows the frustrations: quality varies batch to batch, harvest delays happen without communication, "premium" doesn\'t always mean premium. Here\'s how we address them:'
+          logoVariant="mark"
+          logoSize="xs"
+          className="max-w-[800px] mx-auto mb-12"
+        />
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -75,9 +75,9 @@ export const PRODUCTS: Record<ProductID, ProductSpec> = {
     },
     brands: ['RedLady', 'Nutrigo'],
     images: {
-      hero: 'https://placehold.co/1600x1200/1A1A1C/6B7A52?text=Pomegranate+Hero',
-      thumbnail: 'https://placehold.co/800x600/1A1A1C/6B7A52?text=Pomegranate',
-      render3D: 'https://placehold.co/800x600/1A1A1C/6B7A52?text=Pomegranate+3D',
+      hero: '/images/products/pomegranate.png',
+      thumbnail: '/images/products/pomegranate.png',
+      render3D: '/images/products/pomegranate.png',
     },
     description: {
       short: 'Ruby arils, 14-16° Brix, zero internal defects',
@@ -113,9 +113,9 @@ export const PRODUCTS: Record<ProductID, ProductSpec> = {
     },
     brands: ['Nutrigo'],
     images: {
-      hero: 'https://placehold.co/1600x1200/1A1A1C/6B7A52?text=Banana+Hero',
-      thumbnail: 'https://placehold.co/800x600/1A1A1C/6B7A52?text=Banana',
-      render3D: 'https://placehold.co/800x600/1A1A1C/6B7A52?text=Banana+3D',
+      hero: '/images/products/banana.png',
+      thumbnail: '/images/products/banana.png',
+      render3D: '/images/products/banana.png',
     },
     description: {
       short: 'Controlled ripening ensures optimal eating window at destination',
@@ -130,7 +130,7 @@ export const PRODUCTS: Record<ProductID, ProductSpec> = {
   },
   'onion-01': {
     id: 'onion-01',
-    name: 'Red Onion',
+    name: 'Onion',
     slug: 'red-onion',
     brixTarget: null,
     defectTolerance: {
@@ -151,12 +151,12 @@ export const PRODUCTS: Record<ProductID, ProductSpec> = {
     },
     brands: ['Nutrigo'],
     images: {
-      hero: 'https://placehold.co/1600x1200/1A1A1C/6B7A52?text=Red+Onion+Hero',
-      thumbnail: 'https://placehold.co/800x600/1A1A1C/6B7A52?text=Red+Onion',
+      hero: '/images/products/red-onion.png',
+      thumbnail: '/images/products/red-onion.png',
     },
     description: {
-      short: 'Deep purple arils, extended shelf life, premium export caliber',
-      long: 'Nashik red onions renowned for pungency and storage stability. Ideal for industrial processing and retail.',
+      short: 'Deep purple bulbs, extended shelf life, premium export caliber',
+      long: 'Nashik onions renowned for pungency and storage stability. Ideal for industrial processing and retail.',
     },
     logistics: {
       temperatureRange: 'Ambient',
@@ -188,8 +188,8 @@ export const PRODUCTS: Record<ProductID, ProductSpec> = {
     },
     brands: ['RedLady', 'Nutrigo'],
     images: {
-      hero: 'https://placehold.co/1600x1200/1A1A1C/6B7A52?text=Grapes+Hero',
-      thumbnail: 'https://placehold.co/800x600/1A1A1C/6B7A52?text=Grapes',
+      hero: '/images/products/grapes.png',
+      thumbnail: '/images/products/grapes.png',
     },
     description: {
       short: 'Zero berry drop, premium export caliber, shatter-proof handling',
@@ -225,8 +225,8 @@ export const PRODUCTS: Record<ProductID, ProductSpec> = {
     },
     brands: ['Nutrigo'],
     images: {
-      hero: 'https://placehold.co/1600x1200/1A1A1C/6B7A52?text=Coconut+Hero',
-      thumbnail: 'https://placehold.co/800x600/1A1A1C/6B7A52?text=Coconut',
+      hero: '/images/products/coconut.png',
+      thumbnail: '/images/products/coconut.png',
     },
     description: {
       short: 'Fresh grade, zero shell cracks, high water content for premium buyers',
@@ -262,8 +262,8 @@ export const PRODUCTS: Record<ProductID, ProductSpec> = {
     },
     brands: ['Nutrigo'],
     images: {
-      hero: 'https://placehold.co/1600x1200/1A1A1C/6B7A52?text=Melon+Hero',
-      thumbnail: 'https://placehold.co/800x600/1A1A1C/6B7A52?text=Melon',
+      hero: '/images/products/melon.png',
+      thumbnail: '/images/products/melon.png',
     },
     description: {
       short: 'Firm texture, optimal ripeness window, consistent netting and sweetness',

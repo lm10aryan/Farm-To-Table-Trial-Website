@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -8,12 +7,13 @@ import { Container } from './Container'
 import { cn } from '@/lib/utils'
 import { WHATSAPP_NUMBER } from '@/lib/constants'
 import { Button } from '@/components/ui/Button'
+import { SiteLogo } from '@/components/SiteLogo'
 
 const navItems = [
+  { label: 'Home', href: '/' },
   { label: 'Products', href: '/products' },
-  { label: 'System', href: '/system' },
-  { label: 'Partnership', href: '/partnership' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Work With Us', href: '/work-with-us' },
+  { label: 'FAQ', href: '/faq' },
 ]
 
 const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, '')}`
@@ -31,19 +31,10 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-surface shadow-[0_6px_25px_rgba(22,17,11,0.06)]">
-      <Container className="flex items-center justify-between py-4">
-        <Link href="/" className="flex items-center gap-3" aria-label="Farm to Table">
-          <Image
-            src="/images/logos/farm-to-table.png"
-            alt="Farm to Table placeholder logo"
-            width={48}
-            height={48}
-            className="h-12 w-12 rounded-full border border-border/60 shadow-sm object-cover"
-          />
-          <div className="text-sm leading-tight">
-            <p className="font-semibold tracking-wide text-text">Farm to Table</p>
-            <p className="text-xs text-muted">Premium fresh produce export</p>
-          </div>
+      <Container className="flex h-[68px] items-center justify-between">
+        <Link href="/" className="flex flex-shrink-0 items-center" aria-label="Farm to Table">
+          <SiteLogo variant="compact" size="lg" className="hidden md:inline-flex" />
+          <SiteLogo variant="compact" size="sm" className="md:hidden" />
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">

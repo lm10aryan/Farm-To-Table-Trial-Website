@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { SectionHeader } from '@/components/layout/SectionHeader'
 import {
   Microscope,
   Users,
@@ -77,15 +78,14 @@ export default function ProofPoints() {
     <section className="py-[120px] bg-white">
       <div className="max-w-[1200px] mx-auto px-8">
 
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <p className="text-xs uppercase tracking-widest text-[#6B7A52] mb-3">
-            PROOF OF SYSTEM
-          </p>
-          <h2 className="text-5xl font-bold text-[#2C2416]">
-            Why Buyers Choose Us
-          </h2>
-        </div>
+        <SectionHeader
+          align="center"
+          eyebrow="PROOF OF SYSTEM"
+          title="Why Buyers Choose Us"
+          logoVariant="mark"
+          logoSize="xs"
+          className="mb-12"
+        />
 
         {/* Cards Grid */}
         <motion.div

@@ -2,6 +2,7 @@
 
 import { Section } from '@/components/layout/Section'
 import { Container } from '@/components/layout/Container'
+import { SectionHeader } from '@/components/layout/SectionHeader'
 
 const journeyStages = [
   {
@@ -66,31 +67,14 @@ export function ProcurementJourney() {
     <Section variant="surface" className="py-20">
       <Container>
 
-        {/* Section Header */}
-        <div className="text-center max-w-[800px] mx-auto mb-16">
-          <h2
-            className="font-bold mb-4"
-            style={{
-              fontSize: 'clamp(2rem, 3vw, 3rem)',
-              color: 'var(--color-dark-text)',
-              lineHeight: '1.2',
-            }}
-          >
-            Every Shipment Follows the Same
-            <br />
-            Quality-Controlled Journey
-          </h2>
-          <p
-            className="text-lg"
-            style={{
-              color: 'var(--color-medium-gray)',
-              lineHeight: '1.8',
-            }}
-          >
-            Transparency isn't a marketing term—it's our operating model.
-            Here's exactly how produce moves from our partner farms to your destination.
-          </p>
-        </div>
+        <SectionHeader
+          align="center"
+          title="Every Shipment Follows the Same Quality-Controlled Journey"
+          description="Transparency isn't a marketing term—it's our operating model. Here's exactly how produce moves from our partner farms to your destination."
+          logoVariant="mark"
+          logoSize="xs"
+          className="max-w-[800px] mx-auto mb-12"
+        />
 
         {/* Journey Flow */}
         <div className="relative max-w-5xl mx-auto">

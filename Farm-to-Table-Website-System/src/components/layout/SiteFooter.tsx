@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Container } from './Container'
 import { CONTACT_EMAIL, WHATSAPP_NUMBER } from '@/lib/constants'
 import { Divider } from '@/components/ui/Divider'
+import { SiteLogo } from '@/components/SiteLogo'
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -16,7 +17,7 @@ export function SiteFooter() {
     <footer className="mt-20 border-t border-border/70 bg-surface/80">
       <Container className="grid gap-8 py-12 md:grid-cols-[1.25fr_1fr_1fr]">
         <div className="space-y-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Farm to Table</p>
+          <SiteLogo variant="full" size="md" />
           <p className="text-lg font-semibold text-text">We focus on doing the basics right — and staying close to the work.</p>
         </div>
 

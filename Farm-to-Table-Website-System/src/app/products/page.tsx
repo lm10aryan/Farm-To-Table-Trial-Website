@@ -45,24 +45,24 @@ export default function ProductsPage() {
               <Card
                 key={product.id}
                 interactive
-                className="overflow-hidden border border-[#E8E5E0] bg-white shadow-sm transition hover:border-[#6B7A52]/40"
+                className="group overflow-hidden rounded-[28px] border border-[#E4E0D7] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <Link href={`/products/${product.slug}`} className="flex h-full flex-col">
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F4F1EC]">
+                  <div className="relative h-72 w-full overflow-hidden bg-[#171310]">
                     <Image
                       src={product.images.thumbnail}
                       alt={product.name}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(min-width: 1024px) 24rem, 100vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
-                  <div className="flex flex-1 flex-col gap-4 p-6 text-center">
-                    <h3 className="text-body-xl font-semibold text-[#2C2416]">{product.name}</h3>
-                    <p className="text-body-sm text-[#5A4F3D]">{product.description.short}</p>
-                    <div className="inline-flex items-center justify-center gap-2 rounded-full border border-olive-600/50 bg-olive-900/30 px-3 py-1">
-                      <span className="font-mono text-data-sm text-olive-400">{product.primarySeason.description}</span>
+                  <div className="flex flex-1 flex-col gap-3 p-8 text-center">
+                    <h3 className="text-[1.45rem] font-semibold text-[#2C2416] tracking-tight">{product.name}</h3>
+                    <p className="text-body-sm text-[#5A4F3D] leading-relaxed">{product.description.short}</p>
+                    <div className="mt-auto pt-4 text-sm font-semibold text-[#6B7A52] transition group-hover:text-[#4a5a2d]">
+                      View details →
                     </div>
-                    <div className="pt-2 text-sm font-semibold text-[#6B7A52]">View details →</div>
                   </div>
                 </Link>
               </Card>

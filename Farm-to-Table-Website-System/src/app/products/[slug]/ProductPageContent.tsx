@@ -43,8 +43,17 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
         <div className="section-container">
           <div className="grid gap-12 lg:grid-cols-5">
             <div className="lg:col-span-3">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-base-charcoal">
-                <Image src={product.images.hero} alt={product.name} fill className="object-cover" />
+              <div className="relative overflow-hidden rounded-3xl bg-[#0b0a09]">
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src={product.images.hero}
+                    alt={product.name}
+                    fill
+                    sizes="(min-width: 1024px) 55vw, 100vw"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
               </div>
             </div>
             <div className="space-y-6 lg:col-span-2">
@@ -58,10 +67,10 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
               <div className="card-base space-y-3 p-6">
                 <div className="flex items-center justify-between border-b border-type-tertiary pb-3">
                   <span className="text-body-sm text-type-secondary uppercase tracking-wide">
-                    {product.brixTarget ? 'Brix' : product.name === 'Red Onion' ? 'Caliber' : 'Grade'}
+                    {product.brixTarget ? 'Brix' : product.slug === 'red-onion' ? 'Caliber' : 'Grade'}
                   </span>
                   <span className="font-mono text-data-lg text-olive-400">
-                    {product.brixTarget ?? (product.name === 'Red Onion' ? '55mm+' : 'Premium')}
+                    {product.brixTarget ?? (product.slug === 'red-onion' ? '55mm+' : 'Premium')}
                   </span>
                 </div>
                 <div className="flex items-center justify-between border-b border-type-tertiary pb-3">
@@ -168,23 +177,26 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
 
           <div className="card-base space-y-4 p-6">
             <h3 className="text-center text-body-lg font-semibold text-olive-400">Process Documentation</h3>
-            <div className="relative aspect-video overflow-hidden rounded-lg bg-base-black">
-              {mediaItems[currentMediaIndex].type === 'video' ? (
-                <div className="absolute inset-0 flex items-center justify-center text-type-secondary">
-                  <div className="text-center">
-                    <div className="mb-4 text-6xl">▶️</div>
-                    <p className="text-body-md">{mediaItems[currentMediaIndex].alt}</p>
-                    <p className="mt-2 text-body-sm">(Video placeholder - add actual video URL)</p>
+            <div className="relative overflow-hidden rounded-2xl bg-[#0b0a09]">
+              <div className="relative aspect-video w-full">
+                {mediaItems[currentMediaIndex].type === 'video' ? (
+                  <div className="absolute inset-0 flex items-center justify-center text-type-secondary">
+                    <div className="text-center">
+                      <div className="mb-4 text-6xl">▶️</div>
+                      <p className="text-body-md">{mediaItems[currentMediaIndex].alt}</p>
+                      <p className="mt-2 text-body-sm">(Video placeholder - add actual video URL)</p>
+                    </div>
                   </div>
-                </div>
-              ) : (
-                <Image
-                  src={mediaItems[currentMediaIndex].src}
-                  alt={mediaItems[currentMediaIndex].alt}
-                  fill
-                  className="object-cover"
-                />
-              )}
+                ) : (
+                  <Image
+                    src={mediaItems[currentMediaIndex].src}
+                    alt={mediaItems[currentMediaIndex].alt}
+                    fill
+                    sizes="(min-width: 1024px) 60vw, 100vw"
+                    className="object-cover"
+                  />
+                )}
+              </div>
               <button
                 type="button"
                 onClick={prevMedia}

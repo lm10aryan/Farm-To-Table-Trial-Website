@@ -1,16 +1,25 @@
 'use client'
 
+import type { ReactNode } from 'react'
+
+import { PomegranateIcon } from '@/components/icons/PomegranateIcon'
+import { MelonIcon } from '@/components/icons/MelonIcon'
 import { getAllCatalogProducts, ProductSpec, SeasonMonth } from '@/data/catalogProducts'
 
 const MONTHS: SeasonMonth[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
-const PRODUCT_EMOJIS: Record<string, string> = {
-  'pomo-01': '🍎',
+const PRODUCT_ICONS: Record<string, ReactNode> = {
+  'pomo-01': <PomegranateIcon className="h-7 w-7" />,
   'banana-01': '🍌',
   'onion-01': '🧅',
   'grape-01': '🍇',
   'coco-01': '🥥',
-  'melon-01': '🍈',
+  'melon-01': <MelonIcon className="h-7 w-7" />,
+}
+
+const renderIcon = (icon?: React.ReactNode) => {
+  if (!icon) return '📦'
+  return typeof icon === 'string' ? <span>{icon}</span> : icon
 }
 
 export function SeasonalCalendar() {
@@ -47,7 +56,7 @@ export function SeasonalCalendar() {
                       className="flex aspect-square items-center justify-center rounded-lg border border-[#D9D2C6] bg-[#F8F5F1]"
                       title={product.name}
                     >
-                      <span className="text-4xl">{PRODUCT_EMOJIS[product.id] ?? '📦'}</span>
+                      <span className="text-4xl">{renderIcon(PRODUCT_ICONS[product.id])}</span>
                     </div>
                   ))}
                 </div>
@@ -60,7 +69,7 @@ export function SeasonalCalendar() {
       <div className="flex flex-wrap justify-center gap-3 text-sm text-[#5A4F3D]">
         {products.map((product) => (
           <div key={product.id} className="flex items-center gap-2 rounded-full border border-[#E8E5E0] px-3 py-1">
-            <span>{PRODUCT_EMOJIS[product.id]}</span>
+            <span className="text-xl">{renderIcon(PRODUCT_ICONS[product.id])}</span>
             <span>{product.name}</span>
           </div>
         ))}
