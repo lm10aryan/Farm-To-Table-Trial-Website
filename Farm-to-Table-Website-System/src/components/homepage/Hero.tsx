@@ -27,7 +27,7 @@ export default function Hero() {
 
             {/* Subheadline */}
             <p className="text-lg leading-relaxed text-[#5A4F3D] mb-8 max-w-[560px] mx-auto lg:mx-0">
-              India grows exceptional produce. The supply chain is unpredictable. We've built a system where farmers thrive, quality stays consistent, and buyers get what they paid for.
+              India grows exceptional produce. The supply chain is unpredictable. We&apos;ve built a system where farmers thrive, quality stays consistent, and buyers get what they paid for.
             </p>
 
             {/* CTA Buttons */}

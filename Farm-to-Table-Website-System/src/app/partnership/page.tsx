@@ -42,7 +42,7 @@ const assessmentCriteria = [
     id: 'item2',
     label: 'I value consistency over rock-bottom pricing',
     explanation:
-      'You\'re willing to pay for quality systems, scientific grading, and honest communication. Cheapest price isn\'t your only metric.',
+      'You&apos;re willing to pay for quality systems, scientific grading, and honest communication. Cheapest price isn&apos;t your only metric.',
   },
   {
     id: 'item3',
@@ -54,13 +54,13 @@ const assessmentCriteria = [
     id: 'item4',
     label: 'I want transparent communication',
     explanation:
-      'You want monthly harvest updates, transparent timelines, and proactive problem-solving--not surprises or excuses.',
+      'You want monthly harvest updates, transparent timelines, and proactive problem-solving—not surprises or excuses.',
   },
   {
     id: 'item5',
-    label: 'I\'m open to 2-3 trial shipments first',
+    label: 'I&apos;m open to 2-3 trial shipments first',
     explanation:
-      'You\'re open to trial shipments to validate quality and fit before committing to long-term programs.',
+      'You&apos;re open to trial shipments to validate quality and fit before committing to long-term programs.',
   },
 ]
 
@@ -71,7 +71,7 @@ const partnershipPhases = [
     title: 'Discovery',
     duration: 'Weeks 1-2',
     description:
-      'We share harvest realities, you share quality needs. No sales pressure, no generic pitch--just honest assessment of fit.',
+      'We share harvest realities, you share quality needs. No sales pressure, no generic pitch—just honest assessment of fit.',
     whatYouGet: [
       'Sample harvest update',
       'Quality testing overview',
@@ -144,7 +144,7 @@ const partnershipPhases = [
     title: 'Ongoing Partnership',
     duration: 'Long-term',
     description:
-      'Monthly harvest intelligence, quality filtering, proactive problem-solving. We grow together--your success is our success.',
+      'Monthly harvest intelligence, quality filtering, proactive problem-solving. We grow together—your success is our success.',
     whatYouGet: [
       'Monthly harvest intelligence',
       'Quality filtering',
@@ -305,7 +305,7 @@ export default function PartnershipPage() {
             </p>
             <h2 className="text-[40px] font-bold text-[#2C2416] mb-4">Are We a Good Fit?</h2>
             <p className="text-lg text-[#5A4F3D] max-w-3xl mx-auto">
-              Check the statements that describe your business. We\'ll give you instant feedback on
+              Check the statements that describe your business. We&apos;ll give you instant feedback on
               partnership fit.
             </p>
           </motion.div>
@@ -388,15 +388,15 @@ export default function PartnershipPage() {
                       {fitLevel === 'perfect'
                         ? 'Perfect Fit'
                         : fitLevel === 'likely'
-                        ? 'Likely a Fit—Let\'s Discuss'
+                        ? 'Likely a Fit—Let&apos;s Discuss'
                         : 'Might Not Be the Right Fit'}
                     </h3>
                     <p className="text-[#2C2416] mb-4">
                       {fitLevel === 'perfect'
-                        ? 'Let\'s start the conversation below'
+                        ? 'Let&apos;s start the conversation below'
                         : fitLevel === 'likely'
-                        ? 'Reach out below and we\'ll discuss how we can work together'
-                        : 'Contact anyway if you think there\'s been a misunderstanding'}
+                        ? 'Reach out below and we&apos;ll discuss how we can work together'
+                        : 'Contact anyway if you think there&apos;s been a misunderstanding'}
                     </p>
                     <Link
                       href="#inquiry-form"
@@ -429,8 +429,8 @@ export default function PartnershipPage() {
             </p>
             <h2 className="text-[40px] font-bold text-[#2C2416] mb-4">Partnership Journey</h2>
             <p className="text-lg text-[#5A4F3D] max-w-3xl mx-auto">
-              From first conversation to long-term program--here\'s what to expect at each phase,
-              and what you\'ll get from us.
+              From first conversation to long-term program—here&apos;s what to expect at each phase,
+              and what you&apos;ll get from us.
             </p>
           </motion.div>
 
@@ -529,7 +529,7 @@ export default function PartnershipPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center text-sm text-[#5A4F3D] max-w-2xl mx-auto mt-12 italic"
           >
-            We\'re not perfect. Agriculture is unpredictable. But we\'re honest about challenges
+            We&apos;re not perfect. Agriculture is unpredictable. But we&apos;re honest about challenges
             and disciplined about solutions.
           </motion.p>
         </div>
@@ -629,7 +629,7 @@ export default function PartnershipPage() {
               </div>
             </div>
             <p className="text-xs text-center text-[#5A4F3D] italic">
-              Next partnership review: March 2026. We\'re selective about who we work with--quality
+              Next partnership review: March 2026. We&apos;re selective about who we work with—quality
               of partnerships &gt; quantity.
             </p>
           </motion.div>
@@ -651,7 +651,7 @@ export default function PartnershipPage() {
             </p>
             <h2 className="text-[40px] font-bold text-[#2C2416] mb-4">Start the Conversation</h2>
             <p className="text-lg text-[#5A4F3D]">
-              Tell us about your needs and we\'ll get back to you within 24 hours.
+              Tell us about your needs and we&apos;ll get back to you within 24 hours.
             </p>
           </motion.div>
 
@@ -760,8 +760,8 @@ export default function PartnershipPage() {
                     >
                       <AlertCircle className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
                       <p className="text-sm text-[#2C2416]">
-                        We\'re optimized for 1-3+ month planning cycles. For urgent needs, we can
-                        try to help but that\'s not our strength. If your timeline is flexible,
+                        We&apos;re optimized for 1-3+ month planning cycles. For urgent needs, we can
+                        try to help but that&apos;s not our strength. If your timeline is flexible,
                         select a different option above.
                       </p>
                     </motion.div>
@@ -774,7 +774,7 @@ export default function PartnershipPage() {
                     htmlFor="concern"
                     className="block text-sm font-semibold text-[#2C2416] mb-2"
                   >
-                    What\'s your biggest concern with Indian exporters? *
+                    What&apos;s your biggest concern with Indian exporters? *
                   </label>
                   <textarea
                     id="concern"
@@ -867,7 +867,7 @@ export default function PartnershipPage() {
               <CheckCircle className="w-16 h-16 text-[#4A7C59] mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-[#2C2416] mb-2">Inquiry Sent!</h3>
               <p className="text-lg text-[#5A4F3D] mb-6">
-                We\'ll get back to you within 24 hours. Check your email for confirmation.
+                We&apos;ll get back to you within 24 hours. Check your email for confirmation.
               </p>
               <button
                 onClick={() => setShowSuccess(false)}

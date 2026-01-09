@@ -44,7 +44,7 @@ export default function TwoBrands() {
             </p>
 
             <p className="text-base text-[#5A4F3D] leading-relaxed mb-6">
-              We've refused shipments of Red Lady produce rather than compromise—that's why the brand has earned trust with premium buyers across Middle East, Europe, and Southeast Asia.
+              We&apos;ve refused shipments of Red Lady produce rather than compromise—that&apos;s why the brand has earned trust with premium buyers across Middle East, Europe, and Southeast Asia.
             </p>
 
             <Link
@@ -75,7 +75,7 @@ export default function TwoBrands() {
             </p>
 
             <p className="text-base text-[#5A4F3D] leading-relaxed mb-6">
-              Built for program planning with buyers who understand that 'volume-quality' doesn't mean compromising standards—it means scaling them.
+              Built for program planning with buyers who understand that &apos;volume-quality&apos; doesn&apos;t mean compromising standards—it means scaling them.
             </p>
 
             <Link

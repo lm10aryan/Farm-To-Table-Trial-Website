@@ -27,8 +27,8 @@ export default function PartnershipCTA() {
           {/* Body Paragraph */}
           <p className="text-lg text-[#5A4F3D] leading-relaxed max-w-[650px] mx-auto mb-12">
             We work with premium buyers who value consistency over cheapest price.
-            Trial containers first, long-term programs after. If you're planning 3-6 month
-            programs and quality matters more than rock-bottom pricing, let's talk.
+            Trial containers first, long-term programs after. If you&apos;re planning 3-6 month
+            programs and quality matters more than rock-bottom pricing, let&apos;s talk.
           </p>
 
           {/* CTA Button */}

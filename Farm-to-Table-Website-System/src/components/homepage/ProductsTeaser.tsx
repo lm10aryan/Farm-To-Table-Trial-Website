@@ -80,10 +80,10 @@ export default function ProductsTeaser() {
             CURRENT SEASON
           </p>
           <h2 className="text-5xl font-bold text-[#2C2416] mb-6">
-            What's Available Now
+            What&apos;s Available Now
           </h2>
           <p className="text-lg text-[#5A4F3D] max-w-3xl mx-auto">
-            Quality varies by season—we don't hide that. Here's what's at peak quality right now.
+            Quality varies by season—we don&apos;t hide that. Here&apos;s what&apos;s at peak quality right now.
           </p>
         </div>
 

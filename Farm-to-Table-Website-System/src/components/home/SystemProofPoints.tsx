@@ -40,7 +40,7 @@ const proofPoints = [
       </svg>
     ),
     title: 'Quality Over Volume',
-    description: 'We refuse shipments that don\'t meet standards. Your reputation matters to us - we won\'t compromise it for a sale.',
+    description: 'We refuse shipments that don&apos;t meet standards. Your reputation matters to us - we won&apos;t compromise it for a sale.',
   },
   {
     icon: (
@@ -49,7 +49,7 @@ const proofPoints = [
       </svg>
     ),
     title: 'Aligned Incentives',
-    description: 'Not commission-based. Our success depends on your success. We\'re invested in quality outcomes, not just transaction volume.',
+    description: 'Not commission-based. Our success depends on your success. We&apos;re invested in quality outcomes, not just transaction volume.',
   },
   {
     icon: (
@@ -58,7 +58,7 @@ const proofPoints = [
       </svg>
     ),
     title: 'Relationship-Focused',
-    description: 'Small family team, strategic partnerships. We value depth over scale. We don\'t serve hundreds of buyers - we build with a few.',
+    description: 'Small family team, strategic partnerships. We value depth over scale. We don&apos;t serve hundreds of buyers - we build with a few.',
   },
 ]
 
@@ -70,7 +70,7 @@ export function SystemProofPoints() {
         <SectionHeader
           align="center"
           title="The Challenges Are Real. Our Systems Are Proven."
-          description='Every buyer knows the frustrations: quality varies batch to batch, harvest delays happen without communication, "premium" doesn\'t always mean premium. Here\'s how we address them:'
+          description='Every buyer knows the frustrations: quality varies batch to batch, harvest delays happen without communication, &quot;premium&quot; doesn&apos;t always mean premium. Here&apos;s how we address them:'
           logoVariant="mark"
           logoSize="xs"
           className="max-w-[800px] mx-auto mb-12"

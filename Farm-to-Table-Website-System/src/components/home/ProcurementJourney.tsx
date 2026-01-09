@@ -70,7 +70,7 @@ export function ProcurementJourney() {
         <SectionHeader
           align="center"
           title="Every Shipment Follows the Same Quality-Controlled Journey"
-          description="Transparency isn't a marketing term—it's our operating model. Here's exactly how produce moves from our partner farms to your destination."
+          description="Transparency isn&apos;t a marketing term—it&apos;s our operating model. Here&apos;s exactly how produce moves from our partner farms to your destination."
           logoVariant="mark"
           logoSize="xs"
           className="max-w-[800px] mx-auto mb-12"
@@ -165,8 +165,8 @@ export function ProcurementJourney() {
               fontSize: '1rem',
             }}
           >
-            Products that don't meet export standards are sold in the Indian domestic market.
-            We don't compromise quality to fill containers.
+            Products that don&apos;t meet export standards are sold in the Indian domestic market.
+            We don&apos;t compromise quality to fill containers.
           </p>
         </div>
 

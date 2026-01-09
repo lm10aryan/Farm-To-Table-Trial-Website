@@ -59,7 +59,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Most export models force a choice: squeeze farmers for lower prices,
-            cut corners on quality, or compromise your margins. We've built a
+            cut corners on quality, or compromise your margins. We&apos;ve built a
             premium supply chain where farmers thrive, quality stays consistent,
             and buyers get what they actually paid for.
           </motion.p>
