@@ -57,7 +57,7 @@ export function SystemFinal() {
               Our System: Built to Handle Complexity
             </h2>
             <p className="text-body-lg text-type-secondary max-w-3xl mx-auto">
-              We've spent years building deep expertise in India's agricultural landscape. Same team. Scientific protocols. Direct farm relationships.
+              We&apos;ve spent years building deep expertise in India&apos;s agricultural landscape. Same team. Scientific protocols. Direct farm relationships.
             </p>
           </motion.div>
 

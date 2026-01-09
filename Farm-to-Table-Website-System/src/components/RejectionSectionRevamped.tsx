@@ -86,7 +86,7 @@ export function RejectionSectionRevamped() {
             We Reject 30% at the Gate
           </h2>
           <p className="text-body-lg text-type-secondary max-w-3xl mx-auto">
-            On average, we reject more than 30% of the best-quality produce during grading—so you don't reject it at your port.
+            On average, we reject more than 30% of the best-quality produce during grading—so you don&apos;t reject it at your port.
           </p>
         </motion.div>
 
