@@ -6,7 +6,10 @@ type MediaFrameProps = {
   frameClassName?: string
   imageClassName?: string
   glow?: boolean
-} & Omit<ImageProps, 'fill'>
+} & Omit<ImageProps, 'fill' | 'sizes' | 'alt'> & {
+  alt: string
+  sizes?: string
+}
 
 const aspectClassName: Record<NonNullable<MediaFrameProps['aspect']>, string> = {
   '16:10': 'aspect-[16/10]',
@@ -21,6 +24,7 @@ export function MediaFrame({
   sizes = '(min-width: 1024px) 50vw, 100vw',
   alt,
   glow = false,
+  src,
   ...imageProps
 }: MediaFrameProps) {
   return (
@@ -41,6 +45,7 @@ export function MediaFrame({
           <div className="pointer-events-none absolute inset-0 rounded-[1.25rem] bg-gradient-to-b from-white/15 to-transparent mix-blend-overlay" />
           <Image
             {...imageProps}
+            src={src}
             alt={alt}
             fill
             sizes={sizes}

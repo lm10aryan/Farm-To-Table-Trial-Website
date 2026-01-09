@@ -190,8 +190,17 @@ const caseStudies = [
   },
 ]
 
+// Type for checked items
+type CheckedItemsType = {
+  item1: boolean
+  item2: boolean
+  item3: boolean
+  item4: boolean
+  item5: boolean
+}
+
 export default function PartnershipPage() {
-  const [checkedItems, setCheckedItems] = useState({
+  const [checkedItems, setCheckedItems] = useState<CheckedItemsType>({
     item1: false,
     item2: false,
     item3: false,
@@ -239,7 +248,7 @@ export default function PartnershipPage() {
     }
   }, [])
 
-  const handleCheckboxChange = (id: string) => {
+  const handleCheckboxChange = (id: keyof CheckedItemsType) => {
     setCheckedItems((prev) => ({
       ...prev,
       [id]: !prev[id],
@@ -323,16 +332,16 @@ export default function PartnershipPage() {
                 {assessmentCriteria.map((criterion) => (
                   <div key={criterion.id} className="flex items-start gap-4">
                     <button
-                      onClick={() => handleCheckboxChange(criterion.id)}
+                      onClick={() => handleCheckboxChange(criterion.id as keyof CheckedItemsType)}
                       className={`flex-shrink-0 w-6 h-6 rounded border-2 transition-all duration-200 ${
-                        checkedItems[criterion.id as keyof typeof checkedItems]
+                        checkedItems[criterion.id as keyof CheckedItemsType]
                           ? 'bg-[#6B7A52] border-[#6B7A52] scale-100'
                           : 'bg-white border-[#E8E5E0] hover:border-[#6B7A52]'
                       }`}
                       aria-label={criterion.label}
-                      aria-checked={checkedItems[criterion.id as keyof typeof checkedItems]}
+                      aria-pressed={checkedItems[criterion.id as keyof CheckedItemsType]}
                     >
-                      {checkedItems[criterion.id as keyof typeof checkedItems] && (
+                      {checkedItems[criterion.id as keyof CheckedItemsType] && (
                         <motion.div
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
